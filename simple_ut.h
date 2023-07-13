@@ -67,9 +67,9 @@ std::vector<test_case>& get_test_cases()
 #define ASSERT_EQ(expected, actual)                                             \
     do                                                                          \
     {                                                                           \
-        auto&& e = (expected);                                                  \
-        auto&& a = (actual);                                                    \
-        if (e != a)                                                             \
+        auto&& __e__ = (expected);                                              \
+        auto&& __a__ = (actual);                                                \
+        if (__e__ != __a__)                                                     \
         {                                                                       \
             throw std::runtime_error(                                           \
                 std::string(__FILE__) + ":" + std::to_string(__LINE__)          \
@@ -89,9 +89,9 @@ std::vector<test_case>& get_test_cases()
 #define ASSERT_NE(expected, actual)                                    \
     do                                                                 \
     {                                                                  \
-        auto&& e = (expected);                                         \
-        auto&& a = (actual);                                           \
-        if (e == a)                                                    \
+        auto&& __e__ = (expected);                                     \
+        auto&& __a__ = (actual);                                       \
+        if (__e__ == __a__)                                            \
         {                                                              \
             throw std::runtime_error(                                  \
                 std::string(__FILE__) + ":" + std::to_string(__LINE__) \
